@@ -38,15 +38,9 @@ th, td{
 </style>
 
 <script>
-/* ================= VARIABLES ================= */
-
-// const variable
 const siteName = "Cyber Security Awareness";
-
-// let variable
 let reportCount = 0;
 
-// load initial values
 function loadData(){
     document.getElementById("siteInfo").innerHTML =
         "Website Name: " + siteName;
@@ -58,37 +52,27 @@ function loadData(){
     console.log("Reports:", reportCount);
 }
 
-// let reassignment
 function submitReport(){
     reportCount = reportCount + 1;
     document.getElementById("countInfo").innerHTML =
         "Reports Submitted: " + reportCount;
 }
 
-
-/* ================= FUNCTIONS ================= */
-
-// function declaration
 function showMessage(){
     alert("Stay alert! Cyber safety is important.");
 }
 
-// function expression
 var getRiskScore = function(level){
-    return level * 10;
+    return level ;
 };
 
-// arrow function
 const calculateRisk = () => {
     let score = getRiskScore(3);
     alert("Risk Score: " + score);
 };
 
-
-/* ================= OBJECT ================= */
-
 let securityOfficer = {
-    name: "Officer Ravi",
+    name: "Officer",
     role: "Cyber Analyst",
     status: "Available",
 
@@ -103,15 +87,10 @@ function changeStatus(){
     document.getElementById("officerInfo").innerHTML = msg;
 }
 
-
-/* ================= POP-UPS ================= */
-
-// alert
 function showAlertBox(){
     alert("Cyber alert issued!");
 }
 
-// confirm
 function confirmAction(){
     let result = confirm("Do you want to enable protection?");
     if(result){
@@ -123,7 +102,6 @@ function confirmAction(){
     }
 }
 
-// prompt
 function askName(){
     let name = prompt("Enter your name:");
     document.getElementById("userAction").innerHTML =
