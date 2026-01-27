@@ -14,18 +14,103 @@ body{
 }
 
 header{
-    background-color:rgba(0, 0, 0, 0.7);
+    background-color:rgba(0,0,0,0.7);
     padding:15px;
 }
+
 .section{
     padding:40px;
     background-color:rgba(0,0,0,0.6);
     text-align:center;
 }
+
+table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+    color:white;
+}
+
+th, td{
+    border:1px solid white;
+    padding:10px;
+}
 </style>
+
+<script>
+const siteName = "Cyber Security Awareness";
+let reportCount = 0;
+
+function loadData(){
+    document.getElementById("siteInfo").innerHTML =
+        "Website Name: " + siteName;
+
+    document.getElementById("countInfo").innerHTML =
+        "Reports Submitted: " + reportCount;
+
+    console.log("Site Name:", siteName);
+    console.log("Reports:", reportCount);
+}
+
+function submitReport(){
+    reportCount = reportCount + 1;
+    document.getElementById("countInfo").innerHTML =
+        "Reports Submitted: " + reportCount;
+}
+
+function showMessage(){
+    alert("Stay alert! Cyber safety is important.");
+}
+
+var getRiskScore = function(level){
+    return level ;
+};
+
+const calculateRisk = () => {
+    let score = getRiskScore(3);
+    alert("Risk Score: " + score);
+};
+
+let securityOfficer = {
+    name: "Officer",
+    role: "Cyber Analyst",
+    status: "Available",
+
+    updateStatus: function(){
+        this.status = "Busy";
+        return this.name + " is now " + this.status;
+    }
+};
+
+function changeStatus(){
+    let msg = securityOfficer.updateStatus();
+    document.getElementById("officerInfo").innerHTML = msg;
+}
+
+function showAlertBox(){
+    alert("Cyber alert issued!");
+}
+
+function confirmAction(){
+    let result = confirm("Do you want to enable protection?");
+    if(result){
+        document.getElementById("userAction").innerHTML =
+            "User enabled protection";
+    }else{
+        document.getElementById("userAction").innerHTML =
+            "User canceled protection";
+    }
+}
+
+function askName(){
+    let name = prompt("Enter your name:");
+    document.getElementById("userAction").innerHTML =
+        "Reported by: " + name;
+}
+</script>
 </head>
 
-<body>
+<body onload="loadData()">
 
 <header>
 <span style="font-size:20px; font-weight:bold;">Cyber Security Awareness</span>
@@ -40,45 +125,110 @@ header{
 
 <div class="section">
 <h1>Stay Safe Online</h1>
-<p>Learn simple ways to protect yourself from cyber threats</p>
+<p id="siteInfo"></p>
+<p id="countInfo"></p>
 
-<button style="padding:10px 20px; background-color:green; color:white; border:none; cursor:pointer;">
+<button onclick="showMessage()"
+style="padding:10px 20px; background-color:green; color:white; border:none;">
 Learn Safety
 </button>
 
-<a href="#report"
-style="padding:10px 20px; background-color:red; color:white; text-decoration:none; margin-left:10px;">
-Report Crime
-</a>
+<button onclick="calculateRisk()"
+style="padding:10px 20px; background-color:orange; color:white; border:none;">
+Check Risk
+</button>
 </div>
 
 <div id="threats" class="section">
 <h2>Common Cyber Threats</h2>
-<p><b>Phishing:</b> Fake emails or messages to steal data</p>
-<p><b>Malware:</b> Harmful software that damages systems</p>
-<p><b>Online Fraud:</b> Fake websites and payment scams</p>
+<p><b>Phishing:</b> Fake emails or messages</p>
+<p><b>Malware:</b> Harmful software</p>
+<p><b>Online Fraud:</b> Payment scams</p>
 </div>
 
 <div id="tips" class="section">
 <h2>Cyber Safety Tips</h2>
 <p>Use strong passwords</p>
-<p>Do not click unknown links</p>
-<p>Keep apps and software updated</p>
+<p>Avoid unknown links</p>
+<p>Update software regularly</p>
+</div>
+
+<div class="section">
+<h2>Cyber Threat Table</h2>
+<table>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Example</th>
+<th>Risk</th>
+<th>Prevention</th>
+</tr>
+<tr>
+<td>Phishing</td>
+<td>Fake messages</td>
+<td>Email scams</td>
+<td>High</td>
+<td>Check sender</td>
+</tr>
+<tr>
+<td>Malware</td>
+<td>Damages system</td>
+<td>Virus</td>
+<td>High</td>
+<td>Antivirus</td>
+</tr>
+<tr>
+<td>Fraud</td>
+<td>Fake websites</td>
+<td>Shopping scams</td>
+<td>Medium</td>
+<td>Verify site</td>
+</tr>
+</table>
+</div>
+
+<div class="section">
+<h2>Awareness Video</h2>
+<video width="60%" controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="section">
+<h2>Safety Audio Message</h2>
+<audio controls>
+<source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Cyber Crime Help</h2>
+<iframe src="https://cybercrime.gov.in" width="80%" height="300"></iframe>
+</div>
+
+<div class="section">
+<h2>Security Officer Status</h2>
+<p id="officerInfo">Officer Ravi is Available</p>
+<button onclick="changeStatus()">Change Status</button>
+</div>
+
+<div class="section">
+<h2>Pop-up Actions</h2>
+<p id="userAction"></p>
+<button onclick="showAlertBox()">Alert</button>
+<button onclick="confirmAction()">Confirm</button>
+<button onclick="askName()">Prompt</button>
 </div>
 
 <div id="report" class="section">
 <h2>Report Cyber Crime</h2>
 
-<input type="text" placeholder="Your Name"
-style="width:60%; padding:8px;"><br><br>
+<input type="text" placeholder="Your Name" style="width:60%; padding:8px;"><br><br>
+<input type="email" placeholder="Email Address" style="width:60%; padding:8px;"><br><br>
+<textarea placeholder="Describe the issue" style="width:60%; padding:8px;"></textarea><br><br>
 
-<input type="email" placeholder="Email Address"
-style="width:60%; padding:8px;"><br><br>
-
-<textarea placeholder="Describe the issue"
-style="width:60%; padding:8px;"></textarea><br><br>
-
-<button style="padding:10px 25px; background-color:black; color:white; border:none; cursor:pointer;">
+<button onclick="submitReport()"
+style="padding:10px 25px; background-color:black; color:white;">
 Submit
 </button>
 </div>
