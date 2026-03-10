@@ -14,7 +14,7 @@ body{
 }
 
 header{
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgba(0, 0, 0, 0.6);
     padding:15px;
 }
 
@@ -40,23 +40,6 @@ th, td{
 <script>
 const siteName = "Cyber Security Awareness";
 let reportCount = 0;
-
-function loadData(){
-    document.getElementById("siteInfo").innerHTML =
-        "Website Name: " + siteName;
-
-    document.getElementById("countInfo").innerHTML =
-        "Reports Submitted: " + reportCount;
-
-    console.log("Site Name:", siteName);
-    console.log("Reports:", reportCount);
-}
-
-function submitReport(){
-    reportCount = reportCount + 1;
-    document.getElementById("countInfo").innerHTML =
-        "Reports Submitted: " + reportCount;
-}
 
 function showMessage(){
     alert("Stay alert! Cyber safety is important.");
@@ -89,17 +72,6 @@ function changeStatus(){
 
 function showAlertBox(){
     alert("Cyber alert issued!");
-}
-
-function confirmAction(){
-    let result = confirm("Do you want to enable protection?");
-    if(result){
-        document.getElementById("userAction").innerHTML =
-            "User enabled protection";
-    }else{
-        document.getElementById("userAction").innerHTML =
-            "User canceled protection";
-    }
 }
 
 function askName(){
@@ -202,9 +174,30 @@ Check Risk
 </div>
 
 <div class="section">
-<h2>Cyber Crime Help</h2>
-<iframe src="https://cybercrime.gov.in" width="80%" height="300"></iframe>
+<h2>Learn About Cyber Crime</h2>
+
+<iframe 
+    src="https://en.wikipedia.org/wiki/Cybercrime"
+    width="80%" 
+    height="350">
+</iframe>
+
 </div>
+
+<div class="section">
+<h2>Cyber Security Awareness Guide</h2>
+
+<iframe 
+    width="80%" 
+    height="350"
+    src="https://www.youtube.com/embed/ln4YkQy9Dzw"
+    title="Cyber Security Awareness"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
+
+</div>
+
 
 <div class="section">
 <h2>Security Officer Status</h2>
@@ -216,7 +209,6 @@ Check Risk
 <h2>Pop-up Actions</h2>
 <p id="userAction"></p>
 <button onclick="showAlertBox()">Alert</button>
-<button onclick="confirmAction()">Confirm</button>
 <button onclick="askName()">Prompt</button>
 </div>
 
@@ -234,4 +226,4 @@ Submit
 </div>
 
 </body>
-</html>
+</html>    
