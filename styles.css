@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Buttons */
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: tomato;
+}
+
+/* Highlight class */
+.highlight {
+    background-color: yellow;
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* Traversing structure */
+.grandparent {
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.parent {
+    padding: 10px;
+    border: 2px dashed gray;
+}
+
+.child {
+    padding: 5px;
+    border: 1px solid blue;
+    margin: 5px;
+}
+
+/* Animation box */
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+}
