@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Website Demo</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        #box {
+            width: 200px;
+            height: 100px;
+            background: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">My Startup Website</h1>
+    <p id="desc">Welcome to our startup</p>
+
+    <!-- Task 4 -->
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- Task 5 -->
+    <button onclick="toggleStyle()">Toggle Style</button>
+
+    <!-- Task 6 -->
+    <div id="box" onmouseover="hoverIn()" onmouseout="hoverOut()">
+        Hover Me
+    </div>
+
+    <!-- Task 7 -->
+    <h3>Contact Form</h3>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="email" id="email" placeholder="Enter Email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <br><br>
+    <button onclick="printPage()">Print / Save PDF</button>
+
+<script>
+/* =========================
+   Task 1: Variables
+========================= */
+var company = "Tech Startup";
+let year = 2026;
+const founder = "John";
+
+console.log(company);
+console.log(year);
+console.log(founder);
+
+/* =========================
+   Task 2: Functions
+========================= */
+// Normal function
+function greet() {
+    console.log("Welcome to our startup!");
+}
+greet();
+
+// Arrow function
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
+
+console.log("Addition:", add(10,5));
+console.log("Subtraction:", sub(10,5));
+
+/* =========================
+   Task 3: Built-in Functions
+========================= */
+alert("Welcome to our Website!");
+let user = prompt("Enter your name:");
+console.log("User Name:", user);
+
+if(user){
+    document.getElementById("title").innerText = "Welcome " + user;
+}
+
+/* =========================
+   Task 4: Manipulate HTML
+========================= */
+function changeText() {
+    document.getElementById("desc").innerText = "Text Changed using JavaScript!";
+}
+
+/* =========================
+   Task 5: Styling with JS
+========================= */
+let styled = false;
+
+function toggleStyle() {
+    let element = document.getElementById("title");
+
+    if(!styled){
+        element.style.color = "red";
+        element.style.fontSize = "40px";
+        element.style.backgroundColor = "yellow";
+    } else {
+        element.style.color = "black";
+        element.style.fontSize = "24px";
+        element.style.backgroundColor = "transparent";
+    }
+
+    styled = !styled;
+}
+
+/* =========================
+   Task 6: Events
+========================= */
+function hoverIn() {
+    document.getElementById("box").style.backgroundColor = "green";
+}
+
+function hoverOut() {
+    document.getElementById("box").style.backgroundColor = "lightblue";
+}
+
+/* =========================
+   Task 7: Interactive Page
+========================= */
+function handleSubmit(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(name === "" || email === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    console.log("Form Submitted:", name, email);
+    alert("Form Submitted Successfully");
+}
+
+function printPage() {
+    window.print();
+}
+</script>
+
+</body>
+</html>
