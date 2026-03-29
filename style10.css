@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    background: url("https://cdn.pixabay.com/photo/2019/11/08/10/34/cyber-4610993_1280.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+}
+.section {
+    padding: 40px;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+iframe {
+    width: 80%;
+    height: 350px;
+    border: none;
+}
