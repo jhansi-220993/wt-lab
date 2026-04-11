@@ -1,12 +1,10 @@
 <?php
-$targetDir = "uploads/";
-$fileName = basename($_FILES["file"]["name"]);
-$targetFile = $targetDir . $fileName;
+$dir = "uploads/";
 
-if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)){
-    echo "File uploaded successfully.<br>";
-    echo "<a href='index.php'>Back</a>";
-} else {
-    echo "Upload failed.";
+// Create folder if not exists
+if (!file_exists($dir)) {
+    mkdir($dir, 0777, true);
 }
+
+$files = scandir($dir);
 ?>
